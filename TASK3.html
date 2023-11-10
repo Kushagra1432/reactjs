@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        #color-picker {
+            text-align: center;
+        }
+
+        #color-display {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333;
+            margin-bottom: 20px;
+        }
+
+        input[type="color"] {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="color-picker">
+        <div id="color-display"></div>
+        <input type="color" id="color-input" onchange="updateColor()">
+    </div>
+
+    <script>
+        function updateColor() {
+            const colorInput = document.getElementById('color-input');
+            const colorDisplay = document.getElementById('color-display');
+
+            const selectedColor = colorInput.value;
+            colorDisplay.style.backgroundColor = selectedColor;
+        }
+    </script>
+</body>
+</html>
